@@ -19,17 +19,29 @@ h5 {
 }
 
 .outer-container {
-    background-image: linear-gradient(45deg, rgba(75, 101, 121, 0.42), rgba(0, 17, 39, 0.84)), url(images/freedom.jpg);
-    background-position: 0 0, 50% 50%;
-    background-size: auto, cover;
-    background-repeat: no-repeat;
+    // background-image: linear-gradient(45deg, rgba(75, 101, 121, 0.42), rgba(0, 17, 39, 0.84)), url(images/universe.jpg);
+    background: rgba(0,0,0,0.5);
+    background: -webkit-radial-gradient(50% 55%, ellipse closest-corner, rgba(75,101,121,0.42) 1%, rgba(0,17,39,0.84) 100%), url(images/OGUATVTXI0.jpg);
+    background: -moz-radial-gradient(50% 55%, ellipse closest-corner, rgba(75,101,121,0.42) 1%, rgba(0,17,39,0.84) 100%), url(images/OGUATVTXI0.jpg);
+    background: -ms-radial-gradient(50% 55%, ellipse closest-corner, rgba(75,101,121,0.42) 1%, rgba(0,17,39,0.84) 100%), url(images/OGUATVTXI0.jpg);
+    background: radial,ellipse closest-corner 50% 55%,rgba(75,101,121,0.42) 1%,rgba(0,17,39,0.84) 100%;
+    filter: alpha(opacity=8);
+    // background-image: linear-gradient(45deg, rgba(75, 101, 121, 0.42), rgba(0, 17, 39, 0.84)), url(images/freedom.jpg);
+    // background-position: 0 0, 50% 50%;
+    background-size: cover;
+    // background-repeat: no-repeat;
 }
 
 .hero-section {
-    margin-top: 130px;
+    // margin-top: 130px;
+    margin-top: 118px;
     .row {
         .main-title {
-            margin-bottom: 80px;
+            // margin-bottom: 80px;
+            text-transform: uppercase;
+            font-size: 50px;
+            font-weight: 600;
+            margin-bottom: 54px;
         }
     }
     .description-container {
@@ -38,6 +50,8 @@ h5 {
         .platform-description {
             margin-bottom: 40px;
             max-width: 65%;
+            font-size: 21px;
+            font-weight: 500;
         }
     }
 }
@@ -53,22 +67,33 @@ h5 {
     margin-top: 20px;
     border: 1px solid #fff;
     border-radius: 4px;
-    background-color: #00A8B2;
-    background-image: linear-gradient(173deg, #00A8B2, #003133);
+    // background-color: #00A8B2;
+    background-color: rgba(0, 168, 178, 0.7);
+    -webkit-backdrop-filter: blur(3px);
+    // background-image: linear-gradient(173deg, #00A8B2, #003133);
     -webkit-perspective-origin: 50% 50%;
     perspective-origin: 50% 50%;
     -webkit-transition: background-color 350ms ease;
     transition: background-color 350ms ease;
     color: #fff;
-    font-size: 18px;
+    // font-size: 18px;
     font-weight: 600;
     line-height: 54px;
     transition: background-color 0.35s ease;
+    // 
+    padding-top: 9px;
+    text-transform: uppercase;
+    width: 280px;
+    height: 75px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
     &:hover {
         text-decoration: none;
         color: #fff;
-        background-color: #33b59f;
-        background-image: linear-gradient(173deg, #008E76, #1C9C87);
+        background-color: rgba(0, 125, 132, 0.7);
+        border: 2px solid rgba(255, 255, 255, 0);
+        // background-color: #33b59f;
+        // background-image: linear-gradient(173deg, #008E76, #1C9C87);
     }
 }
 
@@ -111,7 +136,7 @@ h5 {
 #callToAction {
     margin-top: 20px;
     a {
-        font-size: 125%;
+        font-size: 115%;
     }
 }
 
@@ -232,3 +257,28 @@ footer {
         min-height: 300px;
     }
 }
+
+// #overlay {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     opacity: 1;
+//     background: rgba(0,0,0,0.5);
+//     background: -webkit-radial-gradient(50% 55%, ellipse closest-corner, rgba(75,101,121,0.42) 1%, rgba(0,17,39,0.84) 100%);
+//     background: -moz-radial-gradient(50% 55%, ellipse closest-corner, rgba(75,101,121,0.42) 1%, rgba(0,17,39,0.84) 100%);
+//     background: -ms-radial-gradient(50% 55%, ellipse closest-corner, rgba(75,101,121,0.42) 1%, rgba(0,17,39,0.84) 100%);
+//     background: radial,ellipse closest-corner 50% 55%,rgba(75,101,121,0.42) 1%,rgba(0,17,39,0.84) 100%;
+//     filter: alpha(opacity=8);
+//     -webkit-transition: all .3s ease-in-out;
+//     -moz-transition: all .3s ease-in-out;
+//     -ms-transition: all .3s ease-in-out;
+//     transition: all .3s ease-in-out;
+//     -webkit-transform: translate3d(0, 0, 0);
+//     -moz-transform: translate3d(0, 0, 0);
+//     -ms-transform: translate3d(0, 0, 0);
+//     -o-transform: translate3d(0, 0, 0);
+//     transform: translate3d(0, 0, 0);
+//     z-index: 0;
+// }

@@ -1,53 +1,61 @@
-#header{
-	#user-drop-down{
-		.avatar{
-			display: inline-block;
-			margin-right: 10px;
-			margin-top:-10px;
-			top:10px;
-		}
-	}
+#header {
+    #user-drop-down {
+        .avatar {
+            display: inline-block;
+            margin-right: 10px;
+            margin-top: -10px;
+            top: 10px;
+        }
+    }
+    .navbar-brand#brand-name {
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 900;
+        &:focus{
+            color: #fff;
+        }
+    }
 }
 
-.navbar-home{
-	background-color: rgba(248, 248, 248, 0);
+.navbar-home {
+    background-color: rgba(248, 248, 248, 0);
     border-color: rgba(231, 231, 231, 0);
     padding-top: 30px;
-    .navbar-home-brand{
-    	padding-top: 15px;
-    	color: #fff;
-    	&:hover{
-    		color:#fff;
-    	}
+    .navbar-home-brand {
+        padding-top: 15px;
+        color: #fff;
+        &:hover {
+            color: #fff;
+        }
     }
-    .navbar-home-links{
-    	padding-top: 5px;
-    	li{
-    		a{
-    			color: hsla(0,0%,100%,.7);
-    			font-size: 16px !important;
-    			padding-bottom: 10px;
-    			transition: color .4s ease;
-    			&:hover{
-    				color: #fff;
-    				border-bottom: 2px solid #fff;
-    			} 
-    		}
-    	}
+    .navbar-home-links {
+        padding-top: 5px;
+        li {
+            a {
+                color: hsla(0, 0%, 100%, .7);
+                font-size: 15px !important;
+                padding-bottom: 15px;
+                transition: color .4s ease;
+                &:hover {
+                    color: #fff;
+                    border-bottom: 2px solid #00A8B2;
+                }
+            }
+        }
     }
-    .navbar-home-right{
-    	padding-top: 5px;
-    	li{
-    		a.navlink{
-    			color: hsla(0,0%,100%,.7);
-    			font-size: 16px !important;
-    			transition: color .4s ease;
-    			&:hover{
-    				color: #fff;
-    				border-bottom: 2px solid #fff;
-    			} 
-    		}
-    	}
+    .navbar-home-right {
+        padding-top: 5px;
+        li {
+            a.navlink {
+                color: hsla(0, 0%, 100%, .7);
+                font-size: 15px !important;
+                transition: color .4s ease;
+                &:hover {
+                    color: #fff;
+                    border-bottom: 2px solid #00A8B2;
+                }
+            }
+        }
     }
     .navbar-home-collapse{
     	float: right;
