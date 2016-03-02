@@ -16,3 +16,11 @@ UI.registerHelper("resizeImageUrl", function(imageUrl, height, width) {
 	if(imageUrl)
       return imageUrl + "-/resize/" + height + "x" + width + "/";
 });
+
+UI.registerHelper("country", function() {
+   return Session.get("country");
+});
+
+UI.registerHelper("city", function() {
+   return Session.get("city");
+});

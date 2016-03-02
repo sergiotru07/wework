@@ -76,9 +76,20 @@
 	{{>afQuickField name='name' placeholder="Your Name"}}
 	{{>afQuickField name='title' placeholder="Title displayed for your listing"}}
 	{{>afQuickField name='availableForHire'}}
+	{{> afQuickField name='tags' placeholder="Seleccione las etiquetas"}}
 	{{>afQuickField name='type' noselect="true" options="allowed"}}
 	{{>afQuickField name='interestedIn' noselect="true" options="allowed"}}
-	{{>afQuickField name='location' placeholder="Where are you located"}}
+	<!-- {{>afQuickField name='location' placeholder="Where are you located"}} -->
+	<!-- {{> afQuickField name="location" firstOption="(Select a City)" options="allowed"}} -->
+<!-- 	<select multiple data-role="tagsinput">
+  <option value="Amsterdam">Amsterdam</option>
+  <option value="Washington">Washington</option>
+  <option value="Sydney">Sydney</option>
+  <option value="Beijing">Beijing</option>
+  <option value="Cairo">Cairo</option>
+</select> -->
+	{{>afQuickField name='country' placeholder="Ingresa tu país" value=country}}
+	{{>afQuickField name='city' placeholder="Ingresa tu ciudad" value=city}}
 	{{>afQuickField name='contact' placeholder="email/twitter/whatever for you to be contacted at (your user account email address is not displayed)"}}
 	{{>afQuickField name='url' placeholder="URL your personal website/blog"}}
 	{{>afQuickField name='resumeUrl' placeholder="URL of resume/cv hosted externally (dropbox, gdrive, etc)"}}

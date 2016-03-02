@@ -7,17 +7,33 @@ Jobs.attachSchema(
       label: "Job Title",
       max: 128
     },
+    category: {
+      type: String,
+      label: "Categoría",
+      allowedValues: JOB_CATEGORIES
+    },
     company: {
       type: String,
       label: "Company",
       max: 128,
       optional: true
     },
-    location: {
+    tags: {
+        type: [String],
+        label: 'Tags',
+        autoform: {
+            type: 'tagsTypeahead',
+        },
+    },
+    country: {
       type: String,
-      label: "Location",
+      label: "País",
       max: 128,
-      optional: true
+    },
+    city: {
+      type: String,
+      label: "Ciudad",
+      max: 128,
     },
     url: {
       type: String,

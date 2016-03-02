@@ -34,7 +34,7 @@ AccountsTemplates.configureRoute("signIn", {
 AccountsTemplates.configureRoute("signUp", {
     name: 'signUp',
     path: '/sign-up',
-    redirect: '/',
+    redirect: '/profile',
 });
 AccountsTemplates.configureRoute("verifyEmail");
 

@@ -1,9 +1,14 @@
 <template name="jobs">
-	<div class="test"></div>
-	{{#each jobs}}
-		{{>jobSmall}}
-	{{/each}}
-	<div class="text-center">
-		{{> infiniteScroll }}
-	</div>
+   {{#each jobs}}
+      {{# if $eq status 'pending'}}
+        {{#if isInRole 'admin'}}
+            {{> jobSmall}}
+        {{/if}}
+      {{else}}
+         {{> jobSmall}}
+      {{/if}}
+   {{/each}}
+   <div class="text-center">
+      {{> infiniteScroll }}
+   </div>
 </template>

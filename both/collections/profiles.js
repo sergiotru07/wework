@@ -51,10 +51,22 @@ Profiles.attachSchema(
       label: "Title",
       max: 128
     },
-    location: {
+    tags: {
+      type: [String],
+      label: 'Tags',
+      autoform: {
+          type: 'tagsTypeahead',
+      },
+    },
+    country: {
       type: String,
-      label: "Location",
-      max: 256
+      label: "País",
+      max: 128
+    },
+    city: {
+      type: String,
+      label: "Ciudad",
+      max: 128
     },
     description: {
       type: String,

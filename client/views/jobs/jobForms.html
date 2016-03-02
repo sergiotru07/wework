@@ -46,5 +46,26 @@
     </div>
 </template>
 <template name="jobFields">
-    {{> afQuickField name='title' placeholder="Title displayed for your listing"}} {{> afQuickField name="jobtype" firstOption="(Select a Job Type)" options="allowed"}} {{> afQuickField name='company' placeholder="Name of the hiring company"}} {{> afQuickField name='location' placeholder="Where is this job located?"}} {{> afQuickField name='remote'}} {{> afQuickField name='description' rows=8 placeholder="Tell prospective developers about this position. What is the project? What will you expect them to know beforehand? Things like that."}} {{> afQuickField name='url' placeholder="External URL of job posting"}} {{> afQuickField name='contact' placeholder="email/twitter/whatever for you to be contacted at (your user account email address is not displayed)"}}
+    {{> afQuickField name='title' placeholder="Title displayed for your listing"}}
+    {{> afQuickField name="category" firstOption="(Select a Category)" options="allowed"}}
+    {{> afQuickField name="jobtype" firstOption="(Select a Job Type)" options="allowed"}}
+    {{> afQuickField name='company' placeholder="Name of the hiring company"}}
+
+    {{> afQuickField name='tags' placeholder="Seleccione las etiquetas"}}
+    <!-- {{> afQuickField name='location' placeholder="Where is this job located?"}} -->
+    <!-- {{> afQuickField name="location" firstOption="(Select a City)" options="allowed"}} -->
+    <!-- <div class="form-group">
+        <label for="tags">Etiquetas</label>
+        {{> inputAutocomplete data-role="tagsinput" settings=settings id="tags" class="form-control" name="tags" placeholder="Seleccione las etiquetas" }}
+    </div> -->
+
+    {{> afQuickField name='country' placeholder="Ingresa tu país" value=country}}
+    {{> afQuickField name='city' placeholder="Ingresa tu ciudad" value=city}}
+    {{> afQuickField name='remote'}}
+    {{> afQuickField name='description' rows=8 placeholder="Tell prospective developers about this position. What is the project? What will you expect them to know beforehand? Things like that."}}
+    {{> afQuickField name='url' placeholder="External URL of job posting"}}
+    {{> afQuickField name='contact' placeholder="email/twitter/whatever for you to be contacted at (your user account email address is not displayed)"}}
+</template>
+<template name="customTags">
+    {{legend}}
 </template>
