@@ -61,12 +61,17 @@ Router.route("/", function() {
     }
 });
 
-Router.map(function() {
-    this.route('jobs', {
-        path: '/jobs',
-        title: "We Work Meteor - All Jobs"
-    });
+Router.route("/jobs", function() {
+    this.layout("layoutJobs");
+    this.render("jobs");
+    this.render("header", { to: 'header' });
+    this.render("sidebarJobs", { to: 'sidebar' });
+}, {
+    name: "jobs",
+    title: "We Work Meteor - All Jobs"
+})
 
+Router.map(function() {
     this.route('myJobs', {
         path: '/myjobs',
         title: "We Work Meteor - My Jobs",
