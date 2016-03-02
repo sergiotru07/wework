@@ -1,0 +1,44 @@
+<template name="headerHome">
+    <section id="header">
+        {{>connectionBanner}}
+        <nav class="navbar navbar-default navbar-fixed-top navbar-home" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand navbar-home-brand" href="/">We Work Meteor</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-home-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-home-links">
+                        <li class="{{isActiveRoute regex='^jobs$'}}"><a href="{{pathFor 'jobs'}}" class="navlink">Vacantes</a></li>
+                        <!-- <li class="{{isActiveRoute regex='profiles'}}"><a href="{{pathFor 'profiles'}}">Developers</a></li> -->
+                        {{#if currentUser}}
+                            <li class="{{isActiveRoute regex='jobNew'}}"><a href="{{pathFor 'jobNew'}}">Oferta un trabajo</a></li>
+                            {{#unless currentUser.isDeveloper}}
+                                <!-- <li class="{{isActiveRoute regex='^profile$'}}">
+                                    <a href="{{pathFor 'profileNew'}}">Create Developer Profile</a>
+                                </li> -->
+                            {{/unless}}
+                        {{/if}}
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right navbar-home-right">
+                        {{#if currentUser}}
+                                {{>headerUserMenu}}
+                        {{else}}
+                            <li class="{{isActiveRoute regex='signIn'}}"><a href="{{pathFor 'signIn'}}" class="navlink">Ingresa</a></li>
+                            <li class="{{isActiveRoute regex='signUp'}}"><a href="{{pathFor 'signUp'}}" class="navlink">Regístrate</a></li>
+                        {{/if}}
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </section>
+</template>

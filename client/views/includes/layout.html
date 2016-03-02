@@ -1,15 +1,17 @@
 <template name="layout">
-	{{>yield region='header'}}
-	<div id="content-wrapper" class="container">
-		{{>yield}}
-	</div>
-	{{>yield region='footer'}}
+
+    {{>yield region='header'}}
+    <div id="content-wrapper" class="container">
+        {{>yield}}
+    </div>
+    <!-- {{>yield region='footer'}} -->
 </template>
 
 <template name="layoutNoContainer">
-	{{>yield region='header'}}
-	<div id="content-wrapper">
-		{{>yield}}
-	</div>
-	{{>yield region='footer'}}
+    <div class="outer-container">
+        {{>yield region='header'}}
+        <div id="content-wrapper">
+            {{>yield}}
+        </div>
+    </div>
 </template>

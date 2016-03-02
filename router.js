@@ -15,50 +15,53 @@ Router.configure({
 });
 
 
-Router.map(function() {
-    this.route('home', {
-        path: '/',
-        layoutTemplate: 'layoutNoContainer',
-        data: function() {
-            return {
-                jobs: Jobs.find({
-                    featuredThrough: {
-                        $exists: false
-                    },
-                    status: "active"
-                }, {
-                    sort: {
-                        createdAt: -1
-                    },
-                    limit: 10
-                }),
-                featuredJobs: Jobs.find({
-                    featuredThrough: {
-                        $gte: new Date()
-                    },
-                    status: "active"
-                }, {
-                    sort: {
-                        featuredThrough: -1
-                    }
-                }),
-                profiles: Profiles.find({}, {
-                    sort: {
-                        availableForHire: -1,
-                        randomSorter: 1
-                    },
-                    limit: 8
-                }),
-                profile: Profiles.findOne({
-                    userId: Meteor.userId()
-                })
-            };
-        },
-        subscriptions: function() {
-            return [subs.subscribe('homeJobs'), subs.subscribe('featuredJobs'), subs.subscribe('homeDevelopers')];
-        }
-    });
+Router.route("/", function() {
+    this.layout("layoutNoContainer");
+    this.render("home");
+    this.render("headerHome", { to: 'header' });
+}, {
+    name: "home",
+    data: function() {
+        return {
+            jobs: Jobs.find({
+                featuredThrough: {
+                    $exists: false
+                },
+                status: "active"
+            }, {
+                sort: {
+                    createdAt: -1
+                },
+                limit: 10
+            }),
+            featuredJobs: Jobs.find({
+                featuredThrough: {
+                    $gte: new Date()
+                },
+                status: "active"
+            }, {
+                sort: {
+                    featuredThrough: -1
+                }
+            }),
+            profiles: Profiles.find({}, {
+                sort: {
+                    availableForHire: -1,
+                    randomSorter: 1
+                },
+                limit: 8
+            }),
+            profile: Profiles.findOne({
+                userId: Meteor.userId()
+            })
+        };
+    },
+    subscriptions: function() {
+        return [subs.subscribe('homeJobs'), subs.subscribe('featuredJobs'), subs.subscribe('homeDevelopers')];
+    }
+});
 
+Router.map(function() {
     this.route('jobs', {
         path: '/jobs',
         title: "We Work Meteor - All Jobs"

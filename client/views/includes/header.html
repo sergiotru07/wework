@@ -42,10 +42,12 @@
         </nav>
     </section>
 </template>
+
 <template name="headerUserMenu">
     <li id="user-drop-down" class="dropdown">
-        <a class="dropdown-toggle box-user-option" data-toggle="dropdown" href="#">
-			{{> avatar user=currentUser size="small"}}{{currentUserDisplayName}} <span class="caret"></span>
+        <a class="dropdown-toggle box-user-option" data-toggle="dropdown" href="#" style="padding-top: 10px;">
+			{{> avatar user=currentUser size="small"}}
+            <!-- {{currentUserDisplayName}} --> <span class="caret"></span>
 		</a>
         <ul class="dropdown-menu" role="menu">
             <li>
