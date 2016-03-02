@@ -1,5 +1,4 @@
 <template name="layout">
-
     {{>yield region='header'}}
     <div id="content-wrapper" class="container">
         {{>yield}}
@@ -15,4 +14,13 @@
         </div>
     </div>
     <div id="overlay" class="darker"></div>
+</template>
+
+<template name="layoutJobs">
+    {{>yield region='header'}}
+    {{>yield region='sidebar'}}
+    <div id="content-wrapper" class="container">
+        {{>yield}}
+    </div>
+    <!-- {{>yield region='footer'}} -->
 </template>
