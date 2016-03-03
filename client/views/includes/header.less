@@ -23,9 +23,68 @@
     background-color: rgba(170, 170, 170, 0)!important;
 }
 
-.main-navbar{
+.main-navbar {
     height: 66px !important;
     background-color: #232837;
     background: rgba(35,40,55,0.95);
     padding-top: 8px;
+    border: none;
+
+    .navbar-brand {
+        margin-left: -47px !important;
+        margin-right: 70px !important;
+        color: #fff;
+        &:hover {
+            color: #fff;
+        }
+    }
+    .navbar-nav {
+        li {
+            a.main-navlink {
+                color: hsla(0, 0%, 100%, .7);
+                font-size: 15px !important;
+                padding-bottom: 15px;
+                transition: color .4s ease;
+                &:hover {
+                    color: #fff;
+                    border-bottom: 2px solid #00A8B2;
+                }
+                &:focus {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .navbar-right {
+        li {
+            a.main-navlink {
+                color: hsla(0, 0%, 100%, .7);
+                font-size: 15px !important;
+                transition: color .4s ease;
+                &:hover {
+                    color: #fff;
+                    border-bottom: 2px solid #00A8B2;
+                }
+            }
+        }
+    }
+    .navbar-collapse{
+        float: right;
+    }
 }
+
+.search-input{
+    height: 30px !important;
+    width: 300px !important;
+    margin-top: 9px;
+    background-color: rgb(60, 65, 80);
+    border: none;
+    font-size: 14px !important;
+    border: 1px solid #313131;
+    border-radius: 4px !important;
+    color: #fff;
+    &:focus{
+        border: 1px solid #5D5D5D !important;
+    }
+}
+
