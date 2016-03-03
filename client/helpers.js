@@ -24,3 +24,7 @@ UI.registerHelper("country", function() {
 UI.registerHelper("city", function() {
    return Session.get("city");
 });
+
+UI.registerHelper("isRoute", function(path) {
+   return Router.current().route.path(this) === path;
+});

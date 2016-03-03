@@ -15,10 +15,10 @@
 <template name="jobStatusToggle">
     <div class="row">
         <div class="col-sm-12">
-            Current Status is <b>{{status}}</b> - Set status to
+            Current Status is <b class="text-{{statusAlert status}}">{{status}}</b> - Set status to
             {{#each statuses}}
                 {{#unless $eq ../status this}}
-                    <button type="button" class="set-status">{{this}}</button>
+                    <button type="button" class="set-status btn btn-{{statusAlert this}}">{{this}}</button>
                 {{/unless}}
             {{/each}}
             <hr>
@@ -27,7 +27,7 @@
 </template>
 <template name="jobAdminEditLink">
     <div class="pull-right">
-    	<a href="/admin/Jobs/{{_id}}/edit">Edit Job</a>
+    	<a href="/admin/Jobs/{{_id}}/edit" target="_blank">Edit Job</a>
     </div>
 </template>
 <template name="jobSuggestedTweet">

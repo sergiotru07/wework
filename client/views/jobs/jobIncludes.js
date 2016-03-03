@@ -17,6 +17,13 @@ Template.jobExpiredAlert.helpers({
 Template.jobStatusToggle.helpers({
   "statuses": function() {
     return STATUSES;
+  },
+  "statusAlert": function(status){
+    if(status == "active") return "success"
+    if(status == "pending") return "warning"
+    if(status == "filled") return "primary"
+    if(status == "flagged") return "danger"
+    // if(status == "inactive") return "default"
   }
 });
 

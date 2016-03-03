@@ -7,13 +7,22 @@
             top: 10px;
         }
     }
+
+    .navbar-brand#main-layout-brand-name {
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 900;
+        &:focus{
+            color: #fff;
+        }
+    }
 }
 
 .avatar-initials {
     background-color: rgba(170, 170, 170, 0)!important;
 }
 
-.avatar-image {
+.avatar.avatar-small > .avatar-image {
     border-radius: 100%;
 }
 
@@ -40,6 +49,13 @@
     }
     .navbar-nav {
         li {
+
+        		&.active {
+        			a.main-navlink{
+						color: #fff;
+        			}
+        		}
+
             a.main-navlink {
                 color: hsla(0, 0%, 100%, .7);
                 font-size: 15px !important;
@@ -49,6 +65,7 @@
                     color: #fff;
                     border-bottom: 2px solid #00A8B2;
                 }
+
                 &:focus {
                     color: #fff;
                 }
@@ -87,4 +104,3 @@
         border: 1px solid #5D5D5D !important;
     }
 }
-

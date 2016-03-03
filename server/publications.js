@@ -46,13 +46,16 @@ Meteor.publish("homeJobs", function() {
             limit: 10,
             fields: {
                 title: true,
+                category: true,
                 company: true,
                 location: true,
                 createdAt: true,
                 updatedAt: true,
+                city: true,
                 remote: true,
                 jobtype: true,
                 status: true,
+                tags: true,
                 featuredThrough: true
             }
         })
@@ -73,13 +76,16 @@ Meteor.publish("featuredJobs", function() {
             },
             fields: {
                 title: true,
+                category: true,
                 company: true,
                 location: true,
                 createdAt: true,
                 updatedAt: true,
+                city: true,
                 remote: true,
                 jobtype: true,
                 status: true,
+                tags: true,
                 featuredThrough: true
             }
         })
@@ -135,17 +141,20 @@ Meteor.publish("jobs", function(limit) {
         createdAt: {
             $gte: daysUntilExpiration()
         },
-        status: "active"
+        status: { $in: ["active", "pending"] }
     }, {
         fields: {
             title: true,
+            category: true,
             company: true,
             location: true,
             createdAt: true,
             updatedAt: true,
+            city: true,
             remote: true,
             jobtype: true,
             status: true,
+            tags: true,
             featuredThrough: true
         },
         sort: {
