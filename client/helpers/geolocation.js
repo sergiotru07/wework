@@ -22,8 +22,6 @@ function displayLocation(latitude, longitude) {
 
                 Session.set("country", (country ? country : ""));
                 Session.set("city", (city ? city : ""));
-
-                console.log(city, country);
         }
     };
     request.send();
