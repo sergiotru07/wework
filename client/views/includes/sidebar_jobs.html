@@ -1,49 +1,43 @@
 <template name="sidebarJobs">
     <ul class="sidebar-inner-container">
-        <li class="sidebar-title">Categorías</li>
-        <li>
-            <i class="fa fa-desktop fa-lg sidebar-icon"></i>
-            <a href="#" class="sidebar-item">Desarrollo Web</a>
-        </li>
-        <li>
-            <i class="fa fa-android fa-lg sidebar-icon android-icon"></i>
-            <a href="#" class="sidebar-item">Desarrollo Móvil</a>
-        </li>
-        <li>
-            <i class="fa fa-sellsy fa-lg sidebar-icon"></i>
-            <a href="#" class="sidebar-item">Mercadeo y SEO</a>
-        </li>
-        <li>
-            <i class="fa fa-user-plus fa-lg sidebar-icon"></i>
-            <a href="#" class="sidebar-item">Administración</a>
-        </li>
+        <li class="sidebar-title categories">Categorías</li>
+        {{#each categories}}
+            <li name="{{category}}" class="category">
+                <i class="fa fa-{{icon}} fa-lg sidebar-icon"></i>
+                <a name="{{category}}" href="#" class="sidebar-item">{{title}}</a>
+            </li>
+        {{/each}}
     </ul>
     <ul class="sidebar-inner-container">
         <li class="sidebar-title">Ciudades</li>
         <li class="cities-dropdown">
             <i class="fa fa-globe fa-lg sidebar-icon"></i>
-            <div class="dropdown">
+           <!--  <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle cities-dropdown-button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Elije la ciudad
+                    Seleccione la ciudad
                     <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">Bogotá</a></li>
-                    <li><a href="#">Medellín</a></li>
-                    <li><a href="#">Cali</a></li>
-                    <li><a href="#">Barranquilla</a></li>
-                    <li><a href="#">Cartagena</a></li>
-                    <li><a href="#">Pereira</a></li>
-                    <li><a href="#">Armenia</a></li>
-                </ul>
-            </div>
+                </button> -->
+                <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    {{#each cities}}
+                    <li name="{{filterCity}}" class="filter-city">
+                        <a name="{{filterCity}}" href="">{{filterCity}}</a>
+                    </li>
+                    {{/each}}
+                </ul> -->
+                <select class="form-control filter-city">
+                    <option value="todas">Todas</option>
+                    {{#each cities}}
+                        <option value="{{filterCity}}">{{filterCity}}</option>
+                    {{/each}}
+                </select>
+            <!-- </div> -->
         </li>
     </ul>
     <ul class="sidebar-inner-container">
         <li class="sidebar-title">Tags</li>
         <li class="tags-input">
             <div class="input-group">
-                <input type="text" class="form-control form-control-tags" placeholder="Filtra por tecnologías" aria-describedby="sizing-addon2">
+                <input type="text" class="form-control form-control-tags" placeholder="Filtra por tecnologías" aria-describedby="sizing-addon2" data-role="tagsinput">
             </div>
         </li>
     </ul>

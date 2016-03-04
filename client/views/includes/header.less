@@ -10,12 +10,21 @@
 
     .navbar-brand#main-layout-brand-name {
         text-transform: uppercase;
-        font-size: 17px;
+        // font-size: 17px;
         font-weight: 900;
         &:focus{
             color: #fff;
         }
     }
+
+    .container-fluid.jobs-header{
+        padding-right: 40px;
+        padding-left: 30px;
+    }
+}
+
+.navbar-default .navbar-collapse {
+    border-color: transparent;
 }
 
 .avatar-initials {
@@ -106,6 +115,11 @@
 @media (max-width: 768px){
     .navbar-header{
         padding: 0 20px !important;
+    }
+
+    #header .container-fluid.jobs-header{
+        padding-right: 0; 
+        padding-left: 0; 
     }
     .collapse-container{
         padding: 0;

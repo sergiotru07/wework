@@ -60,6 +60,7 @@
             color: #6E7592;
             font-size: 14px;
             font-weight: 600;
+            text-transform: uppercase;
         }
         .sidebar-icon {
             margin-right: 15px;
@@ -166,8 +167,8 @@
     }
 }
 
-.android-icon{
-    margin-right: 20px !important;
+.fa-lg{
+    width: 40px;
 }
 
 @media(min-width:768px) {
@@ -191,4 +192,39 @@
         position: relative;
         margin-right: 0;
     }
+}
+
+// 
+// 
+
+.category{
+    margin-bottom: 4px;
+    cursor: pointer;
+
+    &.active{
+        &[name="Desarrollo Web"]{background: #36b5eb;}
+        &[name="Desarrollo Móvil"]{background: #9CC55C;}
+        &[name="Marketing"]{background: #de9844;}
+        &[name="Diseño"]{background: #00a8b2;}
+        &[name="Administración"]{background: #6073b2;}
+        
+        margin-right: 12px;
+        border-radius: 3px;
+        color: white;
+        a.sidebar-item {
+            color: white;
+            font-weight: 600;
+        }
+
+        a.sidebar-item:hover {
+            color: white;
+        }
+    }
+}
+
+select.filter-city:not([multiple]) {
+    display: inline;
+    width: 130px;
+    border: 1px solid #ececec;
+    color: #8C8C8C;
 }
