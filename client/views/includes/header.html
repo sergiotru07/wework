@@ -15,19 +15,19 @@
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
 
-                <ul class="nav navbar-nav pull-left col-md-6">
+                <!-- <ul class="nav navbar-nav"> -->
                     <!-- Search bar -->
-                    <div class="input-group input-group-lg m-t col-md-12 search">
+                    <!-- <div class="input-group input-group-lg m-t col-md-12 search">
                         <input type="text" ng-keyup="currentPage=0;search()" ng-model="searchTerm" name="q" id="q" autocomplete="off" spellcheck="false" autocorrect="false" class="form-control string ng-pristine ng-untouched ng-valid search-input" placeholder="Busca el trabajo perfecto">
                     </div>
-                </ul>
+                </ul> -->
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="{{isActiveRoute regex='^jobs$'}}"><a href="{{pathFor 'jobs'}}" class="main-navlink">Jobs</a></li>
+                        <li class="{{isActiveRoute regex='^jobs$'}}"><a href="{{pathFor 'jobs'}}" class="main-navlink">Vacantes</a></li>
                         <!-- <li class="{{isActiveRoute regex='profiles'}}"><a href="{{pathFor 'profiles'}}">Developers</a></li> -->
                         {{#if currentUser}}
-                        <li class="{{isActiveRoute regex='jobNew'}}"><a href="{{pathFor 'jobNew'}}" class="main-navlink">Post a Job</a></li>
+                        <li class="{{isActiveRoute regex='jobNew'}}"><a href="{{pathFor 'jobNew'}}" class="main-navlink">Oferta un trabajo</a></li>
                         {{#unless currentUser.isDeveloper}}
                         <!-- <li class="{{isActiveRoute regex='^profile$'}}">
                                     <a href="{{pathFor 'profileNew'}}">Create Developer Profile</a>

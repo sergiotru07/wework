@@ -31,8 +31,6 @@
     border: none;
 
     .navbar-brand {
-        margin-left: -47px !important;
-        margin-right: 70px !important;
         color: #fff;
         &:hover {
             color: #fff;
@@ -86,5 +84,29 @@
     &:focus{
         border: 1px solid #5D5D5D !important;
     }
+}
+
+@media (max-width: 768px){
+    .container{
+        padding: 0;
+        text-align: center;
+        margin-top: 7px;
+        .navbar-collapse{
+            width: 100%;
+            margin: 0;
+            background-color: rgba(35, 40, 55, 0.8);
+            .navbar-nav{
+                a.main-navlink{
+                    color: #fff;
+                    &:hover{
+                        background-color: rgba(35, 40, 55, 0.5);
+                        border: none;
+                    }
+
+                }
+            }
+        }
+    }
+
 }
 
