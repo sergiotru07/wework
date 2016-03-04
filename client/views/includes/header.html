@@ -11,16 +11,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">We Work Meteor</a>
+                    <a class="navbar-brand" id="main-layout-brand-name" href="/">We Work Meteor</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-
-                <!-- <ul class="nav navbar-nav"> -->
-                    <!-- Search bar -->
-                    <!-- <div class="input-group input-group-lg m-t col-md-12 search">
-                        <input type="text" ng-keyup="currentPage=0;search()" ng-model="searchTerm" name="q" id="q" autocomplete="off" spellcheck="false" autocorrect="false" class="form-control string ng-pristine ng-untouched ng-valid search-input" placeholder="Busca el trabajo perfecto">
-                    </div>
-                </ul> -->
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
@@ -59,7 +52,7 @@
             </li>
             <li class="divider"></li>
             {{#if isInRole 'admin'}}
-            <li><a href="/admin"><i class="fa fa-cogs fa-fw"></i> Admin</a></li>
+            <li><a href="/admin" target="_blank"><i class="fa fa-cogs fa-fw"></i> Admin</a></li>
             <li class="divider"></li>
             {{/if}} {{#if currentUser.isDeveloper}}
             <li>

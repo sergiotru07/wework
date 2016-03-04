@@ -5,9 +5,6 @@
                 <div class="col-sm-9">
                     <h4>
                 <a href="{{pathFor 'job'}}">{{title}}</a>
-                {{#if isInRole 'admin'}}
-                    <a href="{{pathFor 'job'}}" class="btn btn-default btn-{{alertMessage}}" role="button">{{status}}</a>
-                {{/if}}
             </h4>
                 </div>
                 <div class="col-sm-3 text-right">
@@ -29,7 +26,13 @@
                     {{/if}}
                 </div>
             </div>
-
+            <div class="row">
+                <div class="col-sm-12">
+                    {{#if isInRole 'admin'}}
+                        <a href="{{pathFor 'job'}}" class="btn btn-default btn-{{alertMessage}} status-button" role="button">{{status}}</a>
+                    {{/if}}
+                </div>
+            </div>
         </div>
     </div>
 </template>

@@ -1,5 +1,6 @@
 AdminConfig = {
   name: 'We Work Meteor',
+  adminEmails: ['info@loopa.io', 'andres@loopa.io'],
   collections: {
     Jobs: {
       icon: 'briefcase',
@@ -24,5 +25,9 @@ AdminConfig = {
   },
   autoForm:{
     omitFields: ['createdAt','updatedAt']
-  }
+  },
+  dashboard: {
+    homeUrl: '/admin'
+  },
+  logoutRedirect: '/admin'
 };

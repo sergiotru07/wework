@@ -1,4 +1,5 @@
 AccountsTemplates.configure({
+    defaultLayout: 'layout',
     // Behaviour
     confirmPassword: true,
     enablePasswordChange: true,
@@ -30,7 +31,7 @@ AccountsTemplates.configure({
         socialSignUp: "",
         socialSignIn: "",
         socialWith: "",
-        sep: "O",
+        sep: "OR",
 
         signInLink_pre: "¿Ya tienes una cuenta?",
         signInLink_link: "ingresar",
@@ -48,12 +49,15 @@ AccountsTemplates.configure({
         title: {
             signIn: "",
             signUp: "",
+            forgotPwd: "",
+            resetPwd: "Cambiar Contrasena"
         },
 
         button: {
           signUp: "Registrarse",
           signIn: "Ingresar",
           forgotPwd: "Enviar Link",
+          resetPwd: "Guardar"
         },
     }
 });
@@ -64,7 +68,7 @@ AccountsTemplates.configureRoute("resetPwd");
 AccountsTemplates.configureRoute("signIn", {
     name: 'signIn',
     path: '/sign-in',
-    redirect: '/',
+    redirect: '/jobs',
 });
 AccountsTemplates.configureRoute("signUp", {
     name: 'signUp',
