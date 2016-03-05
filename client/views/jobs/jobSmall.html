@@ -6,15 +6,20 @@
                     <img src="images/avatar.png">
                 </div>
             </div>
-            <div class="col-xs-12 col-md-9 col-lg-9 job-info">
-                <h3 class="job-title"><a href="{{pathFor 'job'}}">{{title}}</a></h3>
-                <div class="job-tags">
-                    <div class="tag"></div>
-                    <div class="tag"></div>
-                    <div class="tag"></div>
-                </div>
+            <!-- <div class="col-xs-12 col-md-9 col-lg-9 job-info"> -->
+            <div class="col-xs-12 col-md-10 col-lg-9 job-info">
+                <h3 class="job-title"><a href="{{pathFor 'job'}}">{{title}} - {{./city}}</a></h3>
+                    {{#if jobTags}}
+                        <div class="job-tags">
+                            {{#each jobTags}}
+                            <div class="tag">{{.}}</div>
+                            {{/each}}
+                        </div>
+                    {{/if}}
                 <div class="job-other-info">
-                    <p class="job-description"> Pienso que aquí debemos poner una pequeña descripción del trabajo, para no afectar el diseño de la carta, de lo contrario se ve muy vacía. Intenté poner dos filas, pero ya queda muy pequeña. Esta carta tiene tamaño fijo, es decir, que no importa la chorrera de texto o la flata de el, nunca va a cambiar su tamaño..... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    {{#if description}}
+                    <p class="job-description">{{slicedDescription description 300}}</p>
+                    {{/if}}
                     <div class="icons-container">
                         <i class="fa fa-calendar"></i> <p class="icon-info">{{formatDate createdAt}}</p>
                     {{!-- {{#if featured}} - Featured Until {{formatDate featuredThrough}}{{/if}}
@@ -22,18 +27,21 @@
 
                      {{#if company}}
                      <i class="fa fa-building"></i> <p class="icon-info">{{company}}</p>{{/if}}
-                    {{#if location}}
-                    {{#if company}} - {{/if}}<i class="fa fa-map-marker"></i> <p class="icon-info">{{location}}</p>
-                    {{/if}}
+                    <!-- {{#if jobtype}}<i class="fa fa-clock-o"></i> <p class="icon-info">{{jobtype}}</p>{{/if}} -->
+                    {{#if featured}}<i name="featured" class="fa fa-trophy"></i> <p class="icon-info">Featured</p>{{/if}}
+                    {{#if remote}}<i name="remote" class="fa fa-globe"></i> <p class="icon-info">Remote</p>{{/if}}
+                    <!-- {{#if city}}
+                    <i class="fa fa-globe"></i> <p class="icon-info">{{city}}</p>
+                    {{/if}} -->
                     </div>
                     
                 </div>
             </div>
-            <div class="col-xs-12 col-md-1 col-lg-1 job-labels-container">
+            <!-- <div class="col-xs-12 col-md-1 col-lg-1 job-labels-container">
                 <div class="job-labels">
                     {{>jobLabels}}
                 </div>
-            </div>
+            </div> -->
         </section>
     </div>
 </template>

@@ -59,33 +59,33 @@ Jobs.attachSchema(
     userId: {
       type: String,
       label: "User Id",
-      // autoValue: function() {
-      //   if (this.isInsert) {
-      //     return Meteor.userId();
-      //   } else if (this.isUpsert) {
-      //     return {
-      //       $setOnInsert: Meteor.userId()
-      //     };
-      //   } else {
-      //     this.unset();
-      //   }
-      // },
+      autoValue: function() {
+        if (this.isInsert) {
+          return Meteor.userId();
+        } else if (this.isUpsert) {
+          return {
+            $setOnInsert: Meteor.userId()
+          };
+        } else {
+          this.unset();
+        }
+      },
       denyUpdate: true
     },
     userName: {
       type: String,
       label: "User Name",
-      // autoValue: function() {
-      //   if (this.isInsert) {
-      //     return getUserName(Meteor.user());
-      //   } else if (this.isUpsert) {
-      //     return {
-      //       $setOnInsert: getUserName(Meteor.user())
-      //     };
-      //   } else {
-      //     this.unset();
-      //   }
-      // }
+      autoValue: function() {
+        if (this.isInsert) {
+          return getUserName(Meteor.user());
+        } else if (this.isUpsert) {
+          return {
+            $setOnInsert: getUserName(Meteor.user())
+          };
+        } else {
+          this.unset();
+        }
+      }
     },
     description: {
       type: String,
@@ -98,15 +98,15 @@ Jobs.attachSchema(
     status: {
       type: String,
       allowedValues: STATUSES,
-      // autoValue: function() {
-      //   if (this.isInsert) {
-      //     return 'pending';
-      //   } else if (this.isUpsert) {
-      //     return {
-      //       $setOnInsert: 'pending'
-      //     };
-      //   }
-      // },
+      autoValue: function() {
+        if (this.isInsert) {
+          return 'pending';
+        } else if (this.isUpsert) {
+          return {
+            $setOnInsert: 'pending'
+          };
+        }
+      },
     },
     featuredThrough: {
       type: Date,
@@ -121,39 +121,39 @@ Jobs.attachSchema(
     htmlDescription: {
       type: String,
       optional: true,
-      // autoValue: function(doc) {
-      //   var htmlContent = this.field("description");
-      //   if (Meteor.isServer && htmlContent.isSet) {
-      //     return cleanHtml(htmlContent.value);
-      //   }
-      // }
+      autoValue: function(doc) {
+        var htmlContent = this.field("description");
+        if (Meteor.isServer && htmlContent.isSet) {
+          return cleanHtml(htmlContent.value);
+        }
+      }
     },
     // Force value to be current date (on server) upon insert
     // and prevent updates thereafter.
     createdAt: {
       type: Date,
-      // autoValue: function() {
-      //   if (this.isInsert) {
-      //     return new Date();
-      //   } else if (this.isUpsert) {
-      //     return {
-      //       $setOnInsert: new Date()
-      //     };
-      //   } else {
-      //     this.unset();
-      //   }
-      // },
+      autoValue: function() {
+        if (this.isInsert) {
+          return new Date();
+        } else if (this.isUpsert) {
+          return {
+            $setOnInsert: new Date()
+          };
+        } else {
+          this.unset();
+        }
+      },
       denyUpdate: true
     },
     // Force value to be current date (on server) upon update
     // and don't allow it to be set upon insert.
     updatedAt: {
       type: Date,
-      // autoValue: function() {
-      //   if (this.isUpdate) {
-      //     return new Date();
-      //   }
-      // },
+      autoValue: function() {
+        if (this.isUpdate) {
+          return new Date();
+        }
+      },
       denyInsert: true,
       optional: true
     }

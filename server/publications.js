@@ -46,6 +46,7 @@ Meteor.publish("homeJobs", function() {
             limit: 10,
             fields: {
                 title: true,
+                description: true,
                 category: true,
                 company: true,
                 location: true,
@@ -76,6 +77,7 @@ Meteor.publish("featuredJobs", function() {
             },
             fields: {
                 title: true,
+                description: true,
                 category: true,
                 company: true,
                 location: true,
@@ -145,6 +147,7 @@ Meteor.publish("jobs", function(limit) {
     }, {
         fields: {
             title: true,
+            description: true,
             category: true,
             company: true,
             location: true,
