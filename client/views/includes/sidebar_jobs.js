@@ -33,11 +33,34 @@ Template.sidebarJobs.events({
     "keyup .form-control-tags": function(e, t) {
         if (e.keyCode === 13) {
             let $tagField = t.$(".form-control-tags"),
-                tagValue = $tagField.val();
+                tagValue = $tagField.val(),
+                tags = Session.get("tags");
 
-            console.log(tagValue);
+            if(tags){
+                tags.push(tagValue);
+                Session.set("tags", tags);
+            }else{
+                Session.set("tags", [tagValue]);
+            }
 
             $tagField.val("");
+        }
+    },
+
+    "click .tag-pill": function (e, t) {
+        let selectedTags = Session.get("tags"),
+            tagsLength = selectedTags.length,
+            $tagPill = $(e.target),
+            tagValue = $tagPill.html();
+
+            console.log(tagValue);
+        if(tagsLength === 1){
+            $tagPill.remove();
+            Session.set("tags", null);
+        }else{
+            selectedTags = _.without(selectedTags, tagValue);
+            $tagPill.remove();
+            Session.set("tags", selectedTags);
         }
     }
 });
@@ -65,5 +88,23 @@ Template.sidebarJobs.helpers({
     },
     selectedCity: function() {
         return Session.get("selectedCity");
+    },
+
+    settings: function() {
+        return {
+            position: "top",
+            limit: 3,
+            rules: [{
+                // token: '',
+                collection: CloudspiderTags,
+                field: 'name',
+                matchAll: true,
+                template: Template.jobTags
+            }]
+        };
+    },
+
+    selectedTags: function() {
+        return Session.get("tags");
     }
 });

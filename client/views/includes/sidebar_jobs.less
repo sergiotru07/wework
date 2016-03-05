@@ -17,7 +17,7 @@
     width: 0;
     height: 100%;
     margin-left: -250px;
-    border-right: 1px solid rgba(225,225,225,1);
+    border-right: 1px solid rgba(225, 225, 225, 1);
     overflow-y: auto;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -55,7 +55,7 @@
         padding-top: 15px;
         padding-left: 10px;
         padding-bottom: 15px;
-        border-bottom: 1px solid rgba(227,227,227,1);
+        border-bottom: 1px solid rgba(227, 227, 227, 1);
         .sidebar-title {
             color: #6E7592;
             font-size: 14px;
@@ -70,7 +70,7 @@
             display: inline;
             text-decoration: none;
             // color: #9c9c9c;
-            color: rgba(140,140,140,1);
+            color: rgba(140, 140, 140, 1);
             &:hover {
                 text-decoration: none;
                 color: #00A8B2;
@@ -93,17 +93,17 @@
                     text-align: left;
                     border: none;
                     &:active {
-                    	color: #00A8B2;
+                        color: #00A8B2;
                         box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0) !important;
                     }
                     &:hover {
-                		color: #00A8B2;
+                        color: #00A8B2;
                         background-color: #fff;
-            		}
-            		&:focus {
-                		color: #00A8B2;
+                    }
+                    &:focus {
+                        color: #00A8B2;
                         background-color: #fff;
-            		}
+                    }
                 }
             }
         }
@@ -116,9 +116,28 @@
         padding-top: 30px;
         padding-bottom: 40px;
         .postjob-button {
-            width: 180px;
-            height: 60px;
-            margin-top: 20px;
+            // width: 180px;
+            // height: 60px;
+            // margin-top: 20px;
+            // border: 1px solid #fff;
+            // border-radius: 4px;
+            // background-color: rgba(0, 168, 178, 0.75);
+            // -webkit-backdrop-filter: blur(3px);
+            // -webkit-perspective-origin: 50% 50%;
+            // perspective-origin: 50% 50%;
+            // -webkit-transition: background-color 350ms ease;
+            // transition: background-color 350ms ease;
+            // color: #fff;
+            // font-weight: 600;
+            // line-height: 37px;
+            // transition: background-color 0.35s ease;
+            // padding-top: 9px;
+            // text-transform: uppercase;
+            // border: 2px solid rgba(255, 255, 255, 0.1);
+            // border-radius: 5px;
+            width: 190px;
+            height: 50px;
+            margin-top: 13px;
             border: 1px solid #fff;
             border-radius: 4px;
             background-color: rgba(0, 168, 178, 0.75);
@@ -131,10 +150,11 @@
             font-weight: 600;
             line-height: 37px;
             transition: background-color 0.35s ease;
-            padding-top: 9px;
+            padding-top: 5px;
             text-transform: uppercase;
             border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
+            border-radius: 2px;
+            margin-left: -7px;
             &:hover {
                 text-decoration: none;
                 color: #fff;
@@ -168,7 +188,7 @@
     }
 }
 
-.fa-lg{
+.fa-lg {
     width: 40px;
 }
 
@@ -197,18 +217,43 @@
 
 // 
 // 
-
-.category{
+.category {
     margin-bottom: 4px;
     cursor: pointer;
-
-    &.active{
-        &[name="Desarrollo Web"]{background: #36b5eb;}
-        &[name="Desarrollo Móvil"]{background: #9CC55C;}
-        &[name="Marketing"]{background: #de9844;}
-        &[name="Diseño"]{background: #00a8b2;}
-        &[name="Administración"]{background: #6073b2;}
-        
+    &.active {
+        transition: background-color 350ms ease;
+        &[name="Desarrollo Web"] {
+            background: #36b5eb;
+            &:hover{
+                background: #2699CB;
+            }
+        }
+        &[name="Desarrollo Móvil"] {
+            background: #9CC55C;
+            &:hover{
+                background: #8FB456;
+            }
+        }
+        &[name="Marketing"] {
+            background: #ECA249;
+            &:hover{
+                background: #D59343;    
+            }
+        }
+        &[name="Diseño"] {
+            background: #40BEC5;
+            &:hover{
+                background: #00a8b2;
+                // background: #D59343;    
+            }
+        }
+        &[name="Administración"] {
+                background: #7389D3;
+            &:hover{
+                // background: #D59343;    
+                background: #6073b2;
+            }
+        }
         margin-right: 12px;
         border-radius: 3px;
         color: white;
@@ -216,7 +261,6 @@
             color: white;
             font-weight: 600;
         }
-
         a.sidebar-item:hover {
             color: white;
         }
@@ -226,6 +270,53 @@
 select.filter-city:not([multiple]) {
     display: inline;
     width: 130px;
-    border: 1px solid rgba(227,227,227,1);
+    border: 1px solid rgba(227, 227, 227, 1);
     color: #8C8C8C;
+}
+
+.sidebar-tags {
+    .-autocomplete-container {
+        margin-bottom: 50px;
+        margin-left: 15px;
+        .-autocomplete-item {
+            heigth: 10px;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            color: #555;
+            &:hover {
+                color: #fff;
+            }
+            &.selected {
+                color: white;
+                // background: #4183C4;
+                background: rgba(0, 168, 178, 0.75);
+                // background: #de9844;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.tags-bag{
+    margin-left: 25px;
+    margin-right: 10px;
+    width: 250px;
+    .tag-pill {
+        padding: 8px 8px;
+        margin-right: 3px;
+        display: inline;
+        cursor: pointer;
+        background: rgba(0, 168, 178, 0.75);
+        // height: 30px;
+        // margin-right: 8px;
+        border-radius: 2px;
+        // padding-left: 10px;
+        // padding-right: 10px;
+        // padding-top: 5px;
+        color: white;
+        transition: background-color 350ms ease;
+        &:hover{
+            background: rgba(0, 125, 132, 0.75);
+        }
+    }
 }

@@ -2,6 +2,7 @@
     <ul class="sidebar-inner-container">
         <li class="sidebar-title categories">Categorías</li>
         {{#each categories}}
+            <!-- <li name="{{category}}" class="category active"> -->
             <li name="{{category}}" class="category">
                 <i class="fa fa-{{icon}} fa-lg sidebar-icon"></i>
                 <a name="{{category}}" href="#" class="sidebar-item">{{title}}</a>
@@ -33,16 +34,28 @@
             <!-- </div> -->
         </li>
     </ul>
-    <ul class="sidebar-inner-container">
+    <ul class="sidebar-inner-container sidebar-tags">
         <li class="sidebar-title">Tags</li>
         <li class="tags-input">
             <div class="input-group">
-                <input type="text" class="form-control form-control-tags" placeholder="Filtra por tecnologías" aria-describedby="sizing-addon2" data-role="tagsinput">
+                {{> inputAutocomplete settings=settings id="legend" class="form-control form-control-tags" name="legend" placeholder="Filtra por tecnologías" aria-describedby="sizing-addon2"}}
             </div>
         </li>
     </ul>
     <ul class="postjob-container">
-        <a class="text-center postjob-button" role="button" href="/job">Oferta un trabajo</a>
+        {{#if selectedTags}}
+        <div class="tags-bag">
+        {{#each selectedTags}}
+        <li class="tag-pill">{{.}}</li>
+        {{/each}}
+        </div>
+        {{else}}
+            <a class="text-center postjob-button" role="button" href="/job">Oferta un trabajo</a>
+        {{/if}}
     </ul>
     <!-- /#sidebar-wrapper -->
+</template>
+
+<template name="jobTags">
+    <!-- {{year}} <span style="color: {{color}}; background-color: {{bg}};"> -->{{name}}<!-- </span> {{legend}} -->
 </template>
