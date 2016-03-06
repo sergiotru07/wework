@@ -219,9 +219,12 @@
 // 
 .category {
     margin-bottom: 4px;
+    margin-right: 12px;
+    border-radius: 3px;
     cursor: pointer;
+    transition: background-color 500ms ease, color 350ms ease;
     &.active {
-        transition: background-color 350ms ease;
+        transition: background-color 500ms ease, color 350ms ease;
         &[name="Desarrollo Web"] {
             background: #36b5eb;
             &:hover{
@@ -254,8 +257,6 @@
                 background: #6073b2;
             }
         }
-        margin-right: 12px;
-        border-radius: 3px;
         color: white;
         a.sidebar-item {
             color: white;
@@ -283,6 +284,7 @@ select.filter-city:not([multiple]) {
             padding-top: 0 !important;
             padding-bottom: 0 !important;
             color: #555;
+            transition: background 200ms ease;
             &:hover {
                 color: #fff;
             }
@@ -314,7 +316,7 @@ select.filter-city:not([multiple]) {
         // padding-right: 10px;
         // padding-top: 5px;
         color: white;
-        transition: background-color 350ms ease;
+        transition: background-color 200ms ease, color 200ms ease;
         &:hover{
             background: rgba(0, 125, 132, 0.75);
         }

@@ -57,6 +57,7 @@ Meteor.publish("homeJobs", function() {
                 jobtype: true,
                 status: true,
                 tags: true,
+                companyImageUrl: true,
                 featuredThrough: true
             }
         })
@@ -88,6 +89,7 @@ Meteor.publish("featuredJobs", function() {
                 jobtype: true,
                 status: true,
                 tags: true,
+                companyImageUrl: true,
                 featuredThrough: true
             }
         })
@@ -158,6 +160,7 @@ Meteor.publish("jobs", function(limit) {
             jobtype: true,
             status: true,
             tags: true,
+            companyImageUrl: true,
             featuredThrough: true
         },
         sort: {

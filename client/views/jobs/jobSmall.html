@@ -1,9 +1,18 @@
 <template name="jobSmall">
-    <div class="job-card">
+    <div class="job-card animated out">
         <section class="row jobs-cards-section">
             <div class="col-xs-12 col-md-2 col-lg-2 company-brand-container">
                 <div class="company-icon">
-                    <img src="images/avatar.png">
+                {{#if companyImageUrl}}
+                    <!-- <div class="avatar avatar-large">
+                    <img class="img-responsive" src="{{resizeImageUrl customImageUrl 200 200}}"/>
+                    </div> -->
+                    <!-- <img src="{{resizeImageUrl customImageUrl 100 100}}" width="100px"> -->
+                    <img src="{{companyImageUrl}}" width="100px">
+                {{else}}
+                    <!-- {{> avatar userId=userId size="large"}} -->
+                    <img src="images/avatar.png" width="100px;">
+                {{/if}}
                 </div>
             </div>
             <!-- <div class="col-xs-12 col-md-9 col-lg-9 job-info"> -->

@@ -57,6 +57,7 @@ Profiles.attachSchema(
       autoform: {
           type: 'tagsTypeahead',
       },
+      optional: true
     },
     country: {
       type: String,
@@ -133,13 +134,13 @@ Profiles.attachSchema(
       optional: true,
       regEx: SimpleSchema.RegEx.Url
     },
-    stackoverflowUrl: {
-      type: String,
-      label: "Stackoverflow URL",
-      max: 1024,
-      optional: true,
-      regEx: SimpleSchema.RegEx.Url
-    },
+    // stackoverflowUrl: {
+    //   type: String,
+    //   label: "Stackoverflow URL",
+    //   max: 1024,
+    //   optional: true,
+    //   regEx: SimpleSchema.RegEx.Url
+    // },
     randomSorter: {
       type: Number,
       defaultValue: Math.floor(Math.random() * 10000)

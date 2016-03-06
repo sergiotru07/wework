@@ -3,7 +3,7 @@ Template.jobs.onCreated(function() {
     Session.set("categories", null);
     Session.set("cityFilter", null);
     this.infiniteScroll({
-        perPage: 30,
+        perPage: 15,
         subManager: subs,
         collection: Jobs,
         publication: 'jobs'

@@ -20,6 +20,8 @@ Profiles.after.remove(function(userId, doc) {
 
 Jobs.after.insert(function(userId, doc){
   var admin = Users.findOne({roles:"admin"});
+
+  
   Email.send({
       to: getUserEmail(admin),
       from: FROM_EMAIL,

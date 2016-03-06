@@ -108,6 +108,19 @@ Jobs.attachSchema(
         }
       },
     },
+    companyImageUrl: {
+      type: String,
+      optional: true,
+      autoValue: function() {
+        if (this.isInsert) {
+          return Profiles.findOne({userId: Meteor.userId()}).customImageUrl;
+        } else if (this.isUpsert) {
+          return {
+            $setOnInsert: Profiles.findOne({userId: Meteor.userId()}).customImageUrl
+          };
+        }
+      }
+    },
     featuredThrough: {
       type: Date,
       optional: true

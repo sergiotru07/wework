@@ -12,3 +12,11 @@ Template.jobSmall.helpers({
    }
 });
 
+
+// Template.jobSmall.onRendered(function () {
+//    this.$('.job-card').velocity("fadeIn", { duration: 350 })
+// });
+
+// Template.jobSmall.onDestroyed(function () {
+//    this.$('.job-card').velocity("fadeOut", { duration: 500 });
+// });

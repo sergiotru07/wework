@@ -75,26 +75,19 @@
 
 	{{>afQuickField name='name' placeholder="Your Name"}}
 	{{>afQuickField name='title' placeholder="Title displayed for your listing"}}
-	{{>afQuickField name='availableForHire'}}
-	{{> afQuickField name='tags' placeholder="Seleccione las etiquetas"}}
-	{{>afQuickField name='type' noselect="true" options="allowed"}}
-	{{>afQuickField name='interestedIn' noselect="true" options="allowed"}}
-	<!-- {{>afQuickField name='location' placeholder="Where are you located"}} -->
-	<!-- {{> afQuickField name="location" firstOption="(Select a City)" options="allowed"}} -->
-<!-- 	<select multiple data-role="tagsinput">
-  <option value="Amsterdam">Amsterdam</option>
-  <option value="Washington">Washington</option>
-  <option value="Sydney">Sydney</option>
-  <option value="Beijing">Beijing</option>
-  <option value="Cairo">Cairo</option>
-</select> -->
 	{{>afQuickField name='country' placeholder="Ingresa tu país" value=country}}
 	{{>afQuickField name='city' placeholder="Ingresa tu ciudad" value=city}}
+	{{>afQuickField name='type' noselect="true" options="allowed"}}
 	{{>afQuickField name='contact' placeholder="email/twitter/whatever for you to be contacted at (your user account email address is not displayed)"}}
-	{{>afQuickField name='url' placeholder="URL your personal website/blog"}}
-	{{>afQuickField name='resumeUrl' placeholder="URL of resume/cv hosted externally (dropbox, gdrive, etc)"}}
-	{{>afQuickField name='githubUrl' placeholder="Your github public profile"}}
+	{{#if isDeveloper}}
+		{{>afQuickField name='availableForHire'}}
+		{{> afQuickField name='tags' placeholder="Seleccione las etiquetas"}}
+		{{>afQuickField name='interestedIn' noselect="true" options="allowed"}}
+		{{>afQuickField name='url' placeholder="URL your personal website/blog"}}
+		{{>afQuickField name='resumeUrl' placeholder="URL of resume/cv hosted externally (dropbox, gdrive, etc)"}}
+		{{>afQuickField name='githubUrl' placeholder="Your github public profile"}}
+	{{/if}}
 	{{>afQuickField name='linkedinUrl' placeholder="Your linkedin public profile"}}
-	{{>afQuickField name='stackoverflowUrl' placeholder="Your stackoverflow public profile"}}
+	<!-- {{>afQuickField name='stackoverflowUrl' placeholder="Your stackoverflow public profile"}} -->
 	{{>afQuickField name='description' rows=8  placeholder="Tell us about what you've done with meteor, how long you've been programming, things like that"}}
 </template>

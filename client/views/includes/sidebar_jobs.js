@@ -53,13 +53,10 @@ Template.sidebarJobs.events({
             $tagPill = $(e.target),
             tagValue = $tagPill.html();
 
-            console.log(tagValue);
         if(tagsLength === 1){
-            $tagPill.remove();
             Session.set("tags", null);
         }else{
             selectedTags = _.without(selectedTags, tagValue);
-            $tagPill.remove();
             Session.set("tags", selectedTags);
         }
     }
@@ -93,7 +90,7 @@ Template.sidebarJobs.helpers({
     settings: function() {
         return {
             position: "top",
-            limit: 3,
+            limit: 5,
             rules: [{
                 // token: '',
                 collection: CloudspiderTags,

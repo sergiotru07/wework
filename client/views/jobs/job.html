@@ -14,7 +14,7 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<h2>
-								{{title}}
+								{{title}} - {{./city}}
 							</h2>
 						</div>
 					</div>
@@ -24,12 +24,12 @@
 								<i class="fa fa-building fa-fw"></i> {{company}}
 							{{/if}}
 						</div>
-						<div class="col-sm-3">
+						<!-- <div class="col-sm-3">
 							{{#if location}}
 								<i class="fa fa-map-marker"></i> {{location}}
 							{{/if}}
-						</div>
-						<div class="col-sm-6 job-url">
+						</div> -->
+						<div class="col-sm-9 job-url">
 							{{#if url}}
 								<i class="fa fa-external-link fa-m"></i>&nbsp;&nbsp;<a href="{{url}}" target="_blank">{{url}}</a>
 							{{/if}}
@@ -55,6 +55,13 @@
 						<div class="col-sm-9">
 							{{#if htmlDescription}}
 								{{{htmlDescription}}}
+							{{/if}}
+							{{#if tags}}
+								<div>
+								{{#each tags}}
+									<button class="btn btn-primary">{{.}}</button>
+								{{/each}}
+								</div>
 							{{/if}}
 						</div>
 					</div>

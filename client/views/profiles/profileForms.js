@@ -35,6 +35,15 @@ Template.profileEdit.events({
 var customImagePreviewUrl = new ReactiveVar();
 
 Template.profileFields.rendered = function() {
+
+  let typeField = $("[name='type']").val();
+
+  if(typeField === "Individual"){
+      Session.set("type", true);
+  }else{
+      Session.set("type", null);
+  }
+
   var interval;
   var template = this;
   interval = Meteor.setInterval(function() {
@@ -69,5 +78,21 @@ Template.profileFields.helpers({
   "customImagePreviewUrl": function(event, template) {
     if(customImagePreviewUrl.get())
     	return customImagePreviewUrl.get();
+  },
+
+  isDeveloper: function () {
+    return Session.get("type");
+  }
+});
+
+Template.profileFields.events({
+  "change [name='type']": function(e, t) {
+    let typeField = t.$("[name=type]").val();
+
+    if(typeField === "Individual"){
+      Session.set("type", true);
+    }else{
+      Session.set("type", null);
+    }
   }
 });

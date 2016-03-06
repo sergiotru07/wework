@@ -44,13 +44,18 @@
     </ul>
     <ul class="postjob-container">
         {{#if selectedTags}}
-        <div class="tags-bag">
-        {{#each selectedTags}}
-        <li class="tag-pill">{{.}}</li>
-        {{/each}}
-        </div>
+            <div class="tags-bag">
+            {{#transition in="fadeIn:500" out="fadeOut:500"}}
+                {{#each selectedTags}}
+                    <li class="tag-pill animated out">{{.}}</li>
+                {{/each}}
+            {{/transition}}
+            </div>
         {{else}}
-            <a class="text-center postjob-button" role="button" href="/job">Oferta un trabajo</a>
+            {{#animate type="rubberBand" delay="200"}}
+                <!-- <h1 class="logo">Awesome Site</h1> -->
+                <a class="text-center postjob-button" role="button" href="/job">Oferta un trabajo</a>
+            {{/animate}}
         {{/if}}
     </ul>
     <!-- /#sidebar-wrapper -->
