@@ -1,6 +1,6 @@
 Meteor.startup(function() {
     let jobTags = [{
-        legend: 'Desarrollo Web'
+        legend: 'Web'
     }, {
         legend: 'Frontend'
     }, {
@@ -8,7 +8,7 @@ Meteor.startup(function() {
     }, {
         legend: 'Fullstack'
     }, {
-        legend: 'Diseño Web'
+        legend: 'Diseño'
     }, {
         legend: 'HTML'
     }, {
@@ -22,9 +22,7 @@ Meteor.startup(function() {
     }, {
         legend: 'Devops'
     }, {
-        legend: 'Diseño Grafico'
-    }, {
-        legend: 'Desarrollo Movil'
+        legend: 'Movil'
     }, {
         legend: 'iOS'
     }, {
@@ -34,7 +32,7 @@ Meteor.startup(function() {
     }, {
         legend: 'React'
     }, {
-        legend: 'Ruby on Rails'
+        legend: 'RoR'
     }, {
         legend: 'Django'
     }, {
@@ -46,7 +44,7 @@ Meteor.startup(function() {
     }, {
         legend: 'Node'
     }, {
-        legend: 'Bases de Datos'
+        legend: 'DB'
     }, {
         legend: 'SQL'
     }, {
@@ -64,11 +62,9 @@ Meteor.startup(function() {
     }, {
         legend: 'MySQL'
     }, {
-        legend: 'PostgresSQL'
+        legend: 'Postgres'
     }, {
         legend: 'ORACLE'
-    }, {
-        legend: 'Microsoft SQL Server'
     }, {
         legend: '.NET'
     }, {
@@ -85,8 +81,6 @@ Meteor.startup(function() {
         legend: 'Sketch'
     }, {
         legend: 'Bootstrap'
-    }, {
-        legend: 'Material Design'
     }, {
         legend: 'CMS'
     }, {

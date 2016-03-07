@@ -7,8 +7,8 @@
                     <!-- <div class="avatar avatar-large">
                     <img class="img-responsive" src="{{resizeImageUrl customImageUrl 200 200}}"/>
                     </div> -->
-                    <!-- <img src="{{resizeImageUrl customImageUrl 100 100}}" width="100px"> -->
-                    <img src="{{companyImageUrl}}" width="100px">
+                    <img src="{{resizeImageUrl companyImageUrl 200 200}}" width="100px">
+                    <!-- <img src="{{companyImageUrl}}" width="100px"> -->
                 {{else}}
                     <!-- {{> avatar userId=userId size="large"}} -->
                     <img src="images/avatar.png" width="100px;">
@@ -21,7 +21,7 @@
                     {{#if jobTags}}
                         <div class="job-tags">
                             {{#each jobTags}}
-                            <div class="tag">{{.}}</div>
+                            <div class="tag {{hideOnSmall @index}}">{{.}}</div>
                             {{/each}}
                         </div>
                     {{/if}}
@@ -30,27 +30,32 @@
                     <p class="job-description">{{slicedDescription description 300}}</p>
                     {{/if}}
                     <div class="icons-container">
-                        <i class="fa fa-calendar"></i> <p class="icon-info">{{formatDate createdAt}}</p>
-                    {{!-- {{#if featured}} - Featured Until {{formatDate featuredThrough}}{{/if}}
-                     --}}
-
-                     {{#if company}}
-                     <i class="fa fa-building"></i> <p class="icon-info">{{company}}</p>{{/if}}
-                    <!-- {{#if jobtype}}<i class="fa fa-clock-o"></i> <p class="icon-info">{{jobtype}}</p>{{/if}} -->
-                    {{#if featured}}<i name="featured" class="fa fa-trophy"></i> <p class="icon-info">Featured</p>{{/if}}
-                    {{#if remote}}<i name="remote" class="fa fa-globe"></i> <p class="icon-info">Remote</p>{{/if}}
-                    <!-- {{#if city}}
-                    <i class="fa fa-globe"></i> <p class="icon-info">{{city}}</p>
-                    {{/if}} -->
+                        <!-- <div class="jobsmall-icon-container"> -->
+                            <i class="fa fa-calendar"></i> 
+                            <p class="icon-info">{{formatDate createdAt}}</p>
+                        <!-- </div> -->
+                        <!-- <div class="jobsmall-icon-container"> -->
+                        {{#if company}}
+                            <i class="fa fa-building hidden-xs hidden-sm"></i> 
+                            <p class="icon-info hidden-xs hidden-sm">{{company}}</p>
+                        {{/if}}
+                        <!-- </div> -->
+                        <!-- <div class="jobsmall-icon-container"> -->
+                        {{#if featured}}
+                            <i name="featured" class="fa fa-trophy hidden-xs hidden-sm"></i> 
+                            <p class="icon-info hidden-xs hidden-sm">{{company}}</p>
+                        {{/if}}
+                        <!-- </div> -->
+                        <!-- <div class="jobsmall-icon-container"> -->
+                        {{#if remote}}
+                            <i name="remote" class="fa fa-globe"></i> 
+                            <p class="icon-info">Remote</p>
+                        {{/if}}
+                        <!-- </div> -->
                     </div>
                     
                 </div>
             </div>
-            <!-- <div class="col-xs-12 col-md-1 col-lg-1 job-labels-container">
-                <div class="job-labels">
-                    {{>jobLabels}}
-                </div>
-            </div> -->
         </section>
     </div>
 </template>

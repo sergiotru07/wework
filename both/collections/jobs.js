@@ -112,12 +112,8 @@ Jobs.attachSchema(
       type: String,
       optional: true,
       autoValue: function() {
-        if (this.isInsert) {
+        if (this.isInsert && Meteor.isClient) {
           return Profiles.findOne({userId: Meteor.userId()}).customImageUrl;
-        } else if (this.isUpsert) {
-          return {
-            $setOnInsert: Profiles.findOne({userId: Meteor.userId()}).customImageUrl
-          };
         }
       }
     },

@@ -36,10 +36,10 @@ Template.sidebarJobs.events({
                 tagValue = $tagField.val(),
                 tags = Session.get("tags");
 
-            if(tags){
+            if (tags) {
                 tags.push(tagValue);
                 Session.set("tags", tags);
-            }else{
+            } else {
                 Session.set("tags", [tagValue]);
             }
 
@@ -47,15 +47,31 @@ Template.sidebarJobs.events({
         }
     },
 
-    "click .tag-pill": function (e, t) {
+    "click .-autocomplete-item": function(e, t) {
+        console.log(e);
+        let $tagField = t.$(".form-control-tags"),
+            tagValue = $tagField.val(),
+            tags = Session.get("tags");
+
+        if (tags) {
+            tags.push(tagValue);
+            Session.set("tags", tags);
+        } else {
+            Session.set("tags", [tagValue]);
+        }
+
+        $tagField.val("");
+    },
+
+    "click .tag-pill": function(e, t) {
         let selectedTags = Session.get("tags"),
             tagsLength = selectedTags.length,
             $tagPill = $(e.target),
             tagValue = $tagPill.html();
 
-        if(tagsLength === 1){
+        if (tagsLength === 1) {
             Session.set("tags", null);
-        }else{
+        } else {
             selectedTags = _.without(selectedTags, tagValue);
             Session.set("tags", selectedTags);
         }
@@ -104,4 +120,8 @@ Template.sidebarJobs.helpers({
     selectedTags: function() {
         return Session.get("tags");
     }
+});
+
+Template.sidebarJobs.onCreated(function() {
+    Session.set("tags", null);
 });

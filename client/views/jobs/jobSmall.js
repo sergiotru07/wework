@@ -4,11 +4,15 @@ Template.jobSmall.helpers({
    },
 
    jobTags: function () {
-      return _.take(this.tags, 3);
+      return _.take(this.tags, 4);
    },
 
    slicedDescription: function (desc, len) {
-      return desc.length < len ? desc : `${desc.substring(0, len)}...`
+      return desc.length < len ? desc : `${desc.substring(0, len)}...`;
+   },
+
+   hideOnSmall: function (index) {
+      return index > 1 ? "hidden-xs" :  "";
    }
 });
 

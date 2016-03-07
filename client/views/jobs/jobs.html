@@ -1,5 +1,5 @@
 <template name="jobs">
-  {{#transition in="fadeIn:1500" out="fadeOut"}}
+  {{#transition in="zoomIn" out="zoomOut"}}
      {{#each jobs}}
         {{# if $eq status 'pending'}}
           {{#if isInRole 'admin'}}
