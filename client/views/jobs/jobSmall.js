@@ -12,7 +12,13 @@ Template.jobSmall.helpers({
    },
 
    hideOnSmall: function (index) {
-      return index > 1 ? "hidden-xs" :  "";
+      if (index > 2){
+         return "hidden-xs hidden-sm";
+      }else if(index > 1){
+         return "hidden-xs";
+      }else{
+         return "";
+      }
    }
 });
 
