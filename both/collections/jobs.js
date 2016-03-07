@@ -111,11 +111,11 @@ Jobs.attachSchema(
     companyImageUrl: {
       type: String,
       optional: true,
-      autoValue: function() {
-        if (this.isInsert && Meteor.isClient) {
-          return Profiles.findOne({userId: Meteor.userId()}).customImageUrl;
-        }
-      }
+      // autoValue: function() {
+      //   if (this.isInsert && Meteor.isClient) {
+      //     return Profiles.findOne({userId: Meteor.userId()}).customImageUrl;
+      //   }
+      // }
     },
     featuredThrough: {
       type: Date,

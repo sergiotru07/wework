@@ -25,3 +25,13 @@ Template.jobEdit.events({
 		Router.go("job",{_id:this.job._id});
 	}
 })
+
+Template.jobFields.onRendered(function () {
+	let $companyImageUrl = this.$(".form-group").last(),
+		 imageUrl = Profiles.findOne({userId: Meteor.userId()}).customImageUrl;
+
+	$companyImageUrl.addClass("hidden");
+	$companyImageUrl.find("[name='companyImageUrl']").first().attr("value", imageUrl);
+});
+
+// Profiles.findOne({userId: Meteor.userId()}).customImageUrl
