@@ -15,7 +15,7 @@ Template.jobs.helpers({
         return Jobs.find({
             category: { $in: Session.get("categories") ? Session.get("categories") : JOB_CATEGORIES.map(category => category.category) },
             city: { $in: Session.get("cityFilter") ? [Session.get("cityFilter")] : _.chain(Jobs.find().fetch()).map(job => job.city).uniq().value()},
-            tags: { $in: Session.get("tags") ? Session.get("tags") : CloudspiderTags.find().fetch().map(tag => tag.name) }
+            tags: { [Session.get("tags") ? "$in" : "$exists"]: Session.get("tags") ? Session.get("tags") : true }
         }, {
             sort: {
                 featuredThrough: -1,
