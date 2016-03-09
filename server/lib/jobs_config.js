@@ -71,6 +71,25 @@ Meteor.startup(function() {
         "userName": "andres@loopa.io",
         "htmlDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
     }, {
+        "_id": "76o2ThRz5k9hrxMZ9",
+        "category": "Marketing",
+        "city": "Bogotá",
+        "company": "LOOPA SAS",
+        "companyImageUrl": "https://ucarecdn.com/04c10de9-9f03-4a80-b57d-827dd7beadff/",
+        "createdAt": "2016-03-06T12:07:13.331Z",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
+        "jobtype": "Termino Fijo",
+        "remote": true,
+        "status": "active",
+        "tags": [],
+        "title": "Community Manager",
+        "country": "Colombia",
+        "url": "http://loopa.io/trabajos",
+        "contact": "info@loopa.io",
+        "userId": "GGoJgEmC8FrcD8aXX",
+        "userName": "andres@loopa.io",
+        "htmlDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    }, {
         "_id": "E7ANegnhpZSKjX4mv",
         "category": "Diseño",
         "city": "Medellín",
