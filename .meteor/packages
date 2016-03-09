@@ -69,7 +69,6 @@ ostrio:iron-router-title
 astronomerio:core
 copleykj:stripe-sync
 
-msavin:mongol
 chipcastle:countries
 mdg:geolocation
 ecmascript
@@ -80,3 +79,7 @@ twbs:bootstrap
 sacha:spin
 velocityjs:velocityjs
 webtempest:animate
+babrahams:constellation
+constellation:dump-restore
+constellation:schema
+constellation:shorten-collection-names
