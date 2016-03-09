@@ -109,7 +109,6 @@ body {
     // padding-top: 100px;
     padding: 70px 15px 15px;
     background: rgba(241, 241, 241, 0.58);
-
 }
 
 .post-a-job-button {
@@ -144,7 +143,6 @@ body {
         height: 60px;
         // margin-top: 40px;
     }
-
     @media (max-width: 380px) {
         // line-height: 20px;
         width: 160px;
@@ -173,8 +171,9 @@ body {
             text-align: right;
         }
     }
-
-    &.main-layout{margin-top: 120px;}
+    &.main-layout {
+        margin-top: 120px;
+    }
     // &.jobs-layout{margin-top: 120px;}
 }
 
@@ -252,7 +251,7 @@ footer,
 
 #content-wrapper .jumbotron {
     margin-bottom: 0;
-    height: 100vh;
+    min-height: 100vh;
     #buttons {
         @media only screen and (min-width: @screen-md-max) {
             padding-top: 50px;
@@ -298,11 +297,12 @@ nav.navbar {
             }
         }
     }
-
-    .dropdown-menu{
-        a{
+    .dropdown-menu {
+        a {
             transition: color 200ms ease;
-            &:hover{color: #02919A;}
+            &:hover {
+                color: #02919A;
+            }
         }
     }
 }
@@ -334,58 +334,71 @@ footer {
 }
 
 // METEOR USERACCOUNTS FORM PACKAGE
-.at-form{
+.at-form {
     margin-top: 5px;
 }
 
 // IRON ROUTER LOADER
 #iron-router-progress {
-    background-color : rgba(0, 168, 178, 1);
-    box-shadow       : 0 0 5px rgba(0, 168, 178, 1);
+    background-color: rgba(0, 168, 178, 1);
+    box-shadow: 0 0 5px rgba(0, 168, 178, 1);
 }
 
 // sidebar button
-
-#menu-toggle{
+#menu-toggle {
     margin: 10px;
+    position: absolute;
+    left: -48px;
+    top: -35px;
 }
 
-#menu-toggle span{
+#menu-toggle span {
     margin-left: 20px;
 }
 
-#menu-toggle span, 
-#menu-toggle span:before,
-#menu-toggle span:after {
-  cursor: pointer;
-  border-radius: 1px;
-  height: 4px;
-  width: 30px;
-  background: #2D3240;
-  position: absolute;
-  display: block;
-  content: '';
-}
-#menu-toggle span:before {
-  top: -8px;
-}
-#menu-toggle span:after {
-  bottom: -8px; 
+#menu-toggle span {
+    height: 50px;
+    width: 30px;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #2D3240;
+    position: fixed;
+    display: block;
+    content: '';
+    color: white;
+    padding-left: 10px;
+    padding-top: 15px;
 }
 
-#menu-toggle span, #menu-toggle span:before, #menu-toggle span:after {
-  transition: all 500ms ease-in-out;
+#menu-toggle span {
+    transition: all 500ms ease-in-out;
 }
+
 #menu-toggle.active span {
-  background-color: transparent;
-}
-#menu-toggle.active span:before, #menu-toggle.active span:after {
-  top: 0;
-}
-#menu-toggle.active span:before {
-  transform: rotate(45deg);
-}
-#menu-toggle.active span:after {
-  transform: rotate(-45deg);
+    background-color: transparent;
 }
 
+#menu-toggle.active span:before,
+#menu-toggle.active span:after {
+    top: 0;
+}
+
+#menu-toggle.active span:before {
+    transform: rotate(45deg);
+}
+
+#menu-toggle.active span:after {
+    transform: rotate(-45deg);
+}
+
+// Overlay
+.dark-bg {
+    height: 100%;
+    // width: calc(100% - 250px);
+    position: fixed;
+    top: 0;
+    z-index: 998;
+    right: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.6);
+}
