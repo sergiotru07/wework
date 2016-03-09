@@ -6,10 +6,9 @@
             margin-top: -10px;
             top: 10px;
         }
-
-        .caret{
+        .caret {
             color: hsla(0, 0%, 100%, .6);
-            &:hover{
+            &:hover {
                 color: hsla(0, 0%, 100%, .85);
             }
         }
@@ -18,7 +17,7 @@
         text-transform: uppercase;
         font-size: 18px;
         font-weight: 900;
-        &:focus{
+        &:focus {
             color: #fff;
         }
     }
@@ -46,6 +45,10 @@
                 &:hover {
                     color: #fff;
                     border-bottom: 2px solid #00A8B2;
+                    /*@media (max-width: 768px) {
+                        background-color: rgba(40, 49, 74, 0.8) !important;
+                        border: none;
+                    }*/
                 }
             }
         }
@@ -64,7 +67,35 @@
             }
         }
     }
-    .navbar-home-collapse{
-    	float: right;
+    .home-navbar-collapse {
+        float: right;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-collapse-container {
+        padding: 0;
+        text-align: center;
+        .home-navbar-collapse {
+            width: 100%;
+            margin: 0;
+            background-color: rgba(35, 40, 55, 0.4);
+            .navbar-home-links {
+                a.navlink {
+                    color: #fff;
+                    &:hover {
+                        background-color: rgba(40, 46, 66, 0.5);
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
+        background-color: rgba(221, 221, 221, 0) !important;
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #fff !important;
     }
 }
