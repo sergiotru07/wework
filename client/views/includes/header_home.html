@@ -2,7 +2,7 @@
     <section id="header">
         {{>connectionBanner}}
         <nav class="navbar navbar-default navbar-fixed-top navbar-home" role="navigation">
-            <div class="container">
+            <div class="container home-collapse-container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -14,12 +14,12 @@
                     <a class="navbar-brand navbar-home-brand" id="brand-name" href="/">We Work Meteor</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-home-collapse" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse home-navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-home-links">
                         <li class="{{isActiveRoute regex='^jobs$'}}"><a href="{{pathFor 'jobs'}}" class="navlink">Vacantes</a></li>
                         <!-- <li class="{{isActiveRoute regex='profiles'}}"><a href="{{pathFor 'profiles'}}">Developers</a></li> -->
                         {{#if currentUser}}
-                            <li class="{{isActiveRoute regex='jobNew'}}"><a href="{{pathFor 'jobNew'}}">Oferta un trabajo</a></li>
+                            <li class="{{isActiveRoute regex='jobNew'}}"><a href="{{pathFor 'jobNew'}}" class="navlink">Oferta un trabajo</a></li>
                             {{#unless currentUser.isDeveloper}}
                                 <!-- <li class="{{isActiveRoute regex='^profile$'}}">
                                     <a href="{{pathFor 'profileNew'}}">Create Developer Profile</a>
