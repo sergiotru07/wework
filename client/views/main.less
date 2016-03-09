@@ -40,8 +40,14 @@ body {
 }
 
 .hero-section {
-    margin-top: 135px;
+    margin-top: 130px;
     // margin-top: 118px;
+    @media (max-width: @screen-sm-min) {
+        margin-top: 140px;
+    }
+    @media (max-width: @screen-xs-min) {
+        margin-top: 135px;
+    }
     .row {
         .main-title {
             // margin-bottom: 80px;
@@ -50,13 +56,11 @@ body {
             font-weight: 600;
             margin-bottom: 54px;
             @media (max-width: @screen-sm-min) {
-                font-size: 48px;
+                font-size: 43px;
             }
             @media (max-width: @screen-xs-min) {
                 font-size: 36px;
-            }
-            @media (max-width: @screen-xs-min) {
-                font-size: 36px;
+                margin-bottom: 20px;
             }
             @media (max-width: 380px) {
                 font-size: 20px;
@@ -72,9 +76,14 @@ body {
             max-width: 65%;
             font-size: 21px;
             font-weight: 500;
+            @media (max-width: @screen-sm-min) {
+                margin-top: 15px;
+            }
             @media (max-width: @screen-xs-min) {
                 font-size: 19px;
-                margin-top: 40px;
+                margin-top: 30px;
+                margin-bottom: 15px;
+                max-width: 75%;
             }
             @media (max-width: 380px) {
                 font-size: 14px;
@@ -127,22 +136,17 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 5px;
     @media (max-width: @screen-sm-min) {
-        line-height: 42px;
+        line-height: 39px;
         width: 260px;
         height: 60px;
-        margin-top: 40px;
+        // margin-top: 40px;
     }
-    @media (max-width: @screen-sm-min) {
-        line-height: 42px;
-        width: 260px;
-        height: 60px;
-        margin-top: 40px;
-    }
+
     @media (max-width: 380px) {
         line-height: 20px;
         width: 160px;
         height: 60px;
-        margin-top: 40px;
+        // margin-top: 40px;
         font-size: 10px;
     }
     &:hover {
